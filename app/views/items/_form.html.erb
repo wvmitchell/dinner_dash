@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -113,10 +113,6 @@ div.row {
     <div class="row"><label class="col1">Category:&nbsp;&nbsp;</label>
       <span class="col2"><input name="Category" class="input" type="integer" id="Category" value="" size="30" tabindex="4" /></span>
     </div>
-
-    <!-- <div align="center" class="submit"><input type="image" src="images/b_send.gif" alt="send" width="52" height="19" border="0" />
-    </div> -->
-
     <div align="center">
       <button type="submit" id="submit-go"> Submit</button>
     </div>
@@ -124,56 +120,46 @@ div.row {
 </body>
 </html>
 
+_______________________________________
 
+ -->
 
------------------------------------------------
-
-<link rel="stylesheet" type="text/css" href="./css/screen.css">
+<link rel="stylesheet" type="text/css" href="assets/stylesheets/screen.css">
 
 <body>
-<h2>Add or edit a menu item</h2>
-  <form action="">
+  <h2>Add or edit a menu item</h2>
+   <form action="">
     <p>Please complete the form below.  All fields are required.</p>
+    </br>
     <fieldset class="item_info">
       <legend>Item Details</legend>
-      <div>
-        <label for="Title">Title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="text" id="Title" name="Title">
+    <%= form_for @item do |f| %>
+      <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </p>
+      <div class="row">
+        <p>
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+        </p>
       </div>
-      <div>
-        <label for="Description">Description:</label> <input type="text" id="Description" name="Description">
+      <div class="row">
+        <p>
+          <%= f.label :price %>
+          <%= f.text_field :price %>
+        </p>
       </div>
-      <div>
-        <label for="Price">Price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="integer" id="Price" name="Price">
+      <div class="row">
+        <p>
+          <%= f.label :category %>
+          <%= f.text_field :category %>
+        </p>
       </div>
-      <div>
-        <label for="Category">Category:&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="text" id="Category" name="Category">
-      </div>
-    </fieldset>
-    <div>
-      <button type="submit" id="submit-go"> Submit</button>
-    </div>
-  </form>
-</body>
-
-<!-- 
-<%= form_for @item do |f| %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </p>
-  <p>
-    <%= f.label :category %>
-    <%= f.text_field :category %>
-  </p>
-  <p>
-    <%= f.submit "submit" %>
-  </p>
-<% end %> -->
+        </br>
+      <div class="submit">  
+        <p>
+          <%= f.submit "submit" %>
+        </p>
+      </div> 
+    <% end %>
