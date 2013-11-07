@@ -7,33 +7,33 @@
     </br>
     <fieldset class="item_info">
       <legend>Item Details</legend>
-    <%= form_for @item do |f| %>
+  <%= form_for @item do |f| %>
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
+    <div class="row">
       <p>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+       <%= f.label :description %>
+       <%= f.text_field :description %>
       </p>
-      <div class="row">
-        <p>
-          <%= f.label :description %>
-          <%= f.text_field :description %>
-        </p>
-      </div>
-      <div class="row">
-        <p>
-          <%= f.label :price %>
-          <%= f.text_field :price %>
-        </p>
-      </div>
-      <div class="row">
-        <p>
-          <%= f.label :category %>
-          <%= f.text_field :category %>
-        </p>
-      </div>
-        </br>
-      <div class="submit">  
-        <p>
-          <%= f.submit "submit" %>
-        </p>
-      </div> 
-    <% end %>
+    </div>
+    <div class="row">
+      <p>
+       <%= f.label :price %>
+       <%= f.text_field :price %>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+       <%= f.label :category %>
+       <%= f.text_field :category %>
+      </p>
+    </div>
+      </br>
+    <div class="submit">  
+      <p>
+       <%= f.submit "submit" %>
+      </p>
+    </div> 
+  <% end %>
