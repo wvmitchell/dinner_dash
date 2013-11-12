@@ -41,7 +41,7 @@ class CanAddOrEditCategoryTest < Capybara::Rails::TestCase
     visit new_category_path
     fill_in "Name", :with => "Plates"
     click_button "Create"
- 
+
     visit categories_path
     within("#category_3") do
       click_on "Edit"
