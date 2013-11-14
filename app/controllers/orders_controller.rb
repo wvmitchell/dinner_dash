@@ -32,11 +32,11 @@ class OrdersController < ApplicationController
     end
   end
 
-  def place_order
-    current_user.change_order_to_completed
-    flash.notice = "Your order is successfull"
-    cookies.delete :order_id
-    UserMailer.order_email(current_user, current_user.orders.last).deliver
-    redirect_to user_path(current_user)
-  end
+#  def place_order
+#    current_user.change_order_to_completed
+#    flash.notice = "Your order is successfull"
+#    cookies.delete :order_id
+#    UserMailer.order_email(current_user, current_user.orders.last).deliver
+#    redirect_to user_path(current_user)
+#  end
 end
