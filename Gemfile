@@ -57,6 +57,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :test do
+  gem 'simplecov'
+end
+
 # group :development do
 #   gem 'rails-erd'
 # end
